@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aacb8e915683e0349d6df05b7b8e354c1a04a431ba5358d122919c86adbdaf2c
-size 726
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class Seeds_Info : MonoBehaviour
+{
+    public int ItemID;
+    [SerializeField] public TextMeshProUGUI PriceTxt;
+    [SerializeField] public TextMeshProUGUI QuantityTxt;
+    public GameObject ShopManager;
+
+    /*
+    private void Start()
+    {
+        PlayerPrefs.SetString("PriceTxt", PriceTxt.text);
+    }*/
+
+    void Update()
+    {
+        PriceTxt.text = ShopManager.GetComponent<Shop_Seeds>().shopItems[2, ItemID].ToString();
+        QuantityTxt.text = ShopManager.GetComponent<Shop_Seeds>().shopItems[3, ItemID].ToString();
+    }
+
+    }

@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:38a602c0b4837e5510042de8ce91dc45e6ae497fc9e38fc74c6401e3b39ed241
-size 740
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+public class Weapons_Info : MonoBehaviour
+{
+    public int ItemID;
+    [SerializeField] public TextMeshProUGUI PriceTxt;
+    [SerializeField] public TextMeshProUGUI QuantityTxt;
+    public GameObject ShopManager;
+
+    /*
+    private void Start()
+    {
+        string priceTxt = PlayerPrefs.GetString("PriceTxt");
+        PriceTxt.text = priceTxt;
+    }
+    */
+
+    void Update()
+    {
+        PriceTxt.text = ShopManager.GetComponent<Shop_Weapons>().shopItems[2, ItemID].ToString();
+        QuantityTxt.text = ShopManager.GetComponent<Shop_Weapons>().shopItems[3, ItemID].ToString();
+
+
+
+    }
+
+}

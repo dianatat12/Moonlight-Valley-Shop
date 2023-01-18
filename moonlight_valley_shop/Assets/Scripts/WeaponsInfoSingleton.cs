@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:589437a218296166ba21ad9693f72ae0d8e1acbce0e910f9ac99add2cf9c0c2f
-size 825
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WeaponsInfoSingleton : MonoBehaviour
+{
+    public static WeaponsInfoSingleton instance;
+    private int money;
+    private int quantity;
+
+    private void Awake()
+    {
+        // Ensure that the script persists across multiple scenes
+        DontDestroyOnLoad(this.gameObject);
+
+        // Check if there's already an instance of the script
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public int Money
+    {
+        get { return money; }
+        set { money = value; }
+    }
+
+    public int Quantity
+    {
+        get { return quantity; }
+        set { quantity = value; }
+    }
+}

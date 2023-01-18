@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:64314bebf7eb3a4941d2bc9f5d468b0c256ff2253ca5fe5904d0a41191311f28
-size 704
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.AssetImporters;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class scene_change : MonoBehaviour
+{
+    public Shop_Script shopScript;
+
+   public void nextScene()
+    {
+        
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
+    public void Back()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+}

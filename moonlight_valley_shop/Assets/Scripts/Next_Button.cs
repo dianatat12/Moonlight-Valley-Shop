@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e3d22300c9724d1fc18f4af2a7c6ab1feb8aaa2471716a1fb4b1e7f1e08c8f1e
-size 523
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Next_Button : MonoBehaviour
+{
+    public Shop_Script shopScript;
+
+
+    public void Start()
+    {
+        GetComponent<Button>().onClick.AddListener(() => shopScript.NextShop());
+    }
+
+    public void Back()
+    {
+        GetComponent<Button>().onClick.AddListener(() => shopScript.BackShop());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
