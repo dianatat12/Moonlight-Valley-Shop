@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/sell_weapons.unity
     guid: 137c9da7c04924c429df68670d47efc9
   - enabled: 1
-    path: Assets/Scenes/shop.unity
+    path: Assets/Scenes/shop1.unity
     guid: 86b4e78eb3f9d9c4b97fd7e076c430ff
   m_configObjects: {}
